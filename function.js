@@ -12,10 +12,10 @@ function createArray(str){
  let num = ""
  var resultArrayOrigin = [];  
     for(i=0; i < str.length; i++){
-        if(!/[-+*/]/.test(str[i])){
+        if(!/[-+*/]/.test(str[i]) || i == 0){
             num = num + str[i]    
         }
-        if(/[-+*/]/.test(str[i])){
+        if(/[-+*/]/.test(str[i]) && i > 0){
             resultArrayOrigin.push(parseInt(num))
             resultArrayOrigin.push(str[i])
             
@@ -109,7 +109,7 @@ return resultArray;
  return resultArray
  }
 
-//  console.log(completeArray(formatArray([2,"+", 3,"*",5 ,"*",5,"-",234])))
-//  console.log(completeArray(formatArray([2,"+", 3,"*",5 ,"+",5,"*",234])))
-//  console.log(formatArray([1,"*",2,"*",2]))
+  console.log(completeArray(formatArray([2,"+", 3,"*",5 ,"*",5,"-",234])))
+  console.log(completeArray(formatArray([2,"+", 3,"*",5 ,"+",5,"*",234])))
+  console.log(formatArray([1,"*",2,"*",2]))
  
